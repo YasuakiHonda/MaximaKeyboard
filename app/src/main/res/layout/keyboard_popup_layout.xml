@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -15,7 +16,8 @@
         android:keyBackground="@drawable/key_background"
         android:keyTextColor="#fff"
         android:background="@color/colorPrimaryDark"
-        android:keyTextSize="22sp"/>
+        android:keyTextSize="22sp"
+        tools:ignore="ResourceCycle" />
     <ImageButton android:id="@android:id/closeButton"
         android:background="@android:color/transparent"
         android:layout_width="wrap_content"

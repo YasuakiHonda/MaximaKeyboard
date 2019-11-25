@@ -38,6 +38,7 @@ public class LatinKeyboard extends Keyboard {
      * visible while {@link InputMethodManager#shouldOfferSwitchingToNextInputMethod(IBinder)}
      * returns true. When this key becomes invisible, its width will be shrunk to zero.
      */
+    @SuppressWarnings("JavadocReference")
     private Key mLanguageSwitchKey;
     /**
      * Stores the size and other information of {@link #mModeChangeKey} when

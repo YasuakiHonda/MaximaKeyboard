@@ -16,6 +16,7 @@
 
 package jp.yhonda.MaximaKeyboard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -69,6 +70,7 @@ public class CandidateView extends View {
      * @param context
      * @param attrs
      */
+    @SuppressWarnings("JavadocReference")
     public CandidateView(Context context) {
         super(context);
         mSelectionHighlight = context.getResources().getDrawable(
@@ -236,8 +238,9 @@ public class CandidateView extends View {
         invalidate();
     }
     
+    @SuppressLint("WrongCall")
     public void setSuggestions(List<String> suggestions, boolean completions,
-            boolean typedWordValid) {
+                               boolean typedWordValid) {
         clear();
         if (suggestions != null) {
             mSuggestions = new ArrayList<String>(suggestions);
@@ -304,6 +307,7 @@ public class CandidateView extends View {
      * gesture.
      * @param x
      */
+    @SuppressLint("WrongCall")
     public void takeSuggestionAt(float x) {
         mTouchX = (int) x;
         // To detect candidate
