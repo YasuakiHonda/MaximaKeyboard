@@ -81,6 +81,7 @@
         <Key android:codes="40" android:keyLabel="(" />
         <Key android:codes="41" android:keyLabel=")" />
         <Key android:codes="95" android:keyLabel="_" />
+        <Key android:codes="34" android:keyLabel="&quot;" />
         <Key android:codes="10" android:keyIcon="@drawable/sym_keyboard_return"
                 android:keyWidth="20%p" android:keyEdgeFlags="right"/>
     </Row>

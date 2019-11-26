@@ -1,4 +1,4 @@
-package com.yhonda.MaximaKeyboard;
+package jp.yhonda.MaximaKeyboard;
 
 import org.junit.Test;
 

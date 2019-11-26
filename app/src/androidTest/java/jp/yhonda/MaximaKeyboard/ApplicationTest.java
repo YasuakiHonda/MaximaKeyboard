@@ -1,4 +1,4 @@
-package com.yhonda.MaximaKeyboard;
+package jp.yhonda.MaximaKeyboard;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
