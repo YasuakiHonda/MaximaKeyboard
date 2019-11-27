@@ -15,7 +15,7 @@
         android:popupLayout="@layout/keyboard_popup_layout"
         android:keyBackground="@drawable/key_background"
         android:keyTextColor="#fff"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/candidate_normal"
         android:keyTextSize="22sp"
         tools:ignore="ResourceCycle" />
     <ImageButton android:id="@android:id/closeButton"

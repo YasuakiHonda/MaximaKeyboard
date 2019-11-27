@@ -10,7 +10,7 @@
     android:keyPreviewLayout="@layout/preview"
     android:keyBackground="@drawable/key_background"
     android:keyTextColor="#fff"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/candidate_normal"
     android:popupLayout="@layout/keyboard_popup_layout" >
 
 </jp.yhonda.MaximaKeyboard.LatinKeyboardView>
