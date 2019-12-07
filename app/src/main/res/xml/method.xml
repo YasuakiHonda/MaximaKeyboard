@@ -21,9 +21,10 @@
 <!-- for the Search Manager. -->
 
 <input-method xmlns:android="http://schemas.android.com/apk/res/android"
-        android:settingsActivity="com.blackcj.customkeyboard.ImePreferences"
+        android:settingsActivity="jp.yhonda.MaximaKeyboard.ImePreferences"
         android:supportsSwitchingToNextInputMethod="true"
 >
+    <!--
     <subtype
         android:label="@string/label_subtype_generic"
         android:icon="@drawable/icon_en_us"
@@ -33,5 +34,8 @@
         android:label="@string/label_subtype_en_GB"
         android:icon="@drawable/icon_en_gb"
         android:imeSubtypeLocale="en_GB"
+        android:imeSubtypeMode="keyboard" />
+    -->
+    <subtype
         android:imeSubtypeMode="keyboard" />
 </input-method>
