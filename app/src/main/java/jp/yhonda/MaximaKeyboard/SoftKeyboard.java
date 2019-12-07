@@ -199,7 +199,7 @@ public class SoftKeyboard extends InputMethodService
                 // be doing predictive text (showing candidates as the
                 // user types).
                 mCurKeyboard = mQwertyKeyboard;
-                mPredictionOn = true;
+                mPredictionOn = false;
                 
                 // We now look for a few special variations of text that will
                 // modify our behavior.
@@ -227,6 +227,7 @@ public class SoftKeyboard extends InputMethodService
                     // own it displaying its own UI.
                     mPredictionOn = false;
                     mCompletionOn = isFullscreenMode();
+                    mCompletionOn = false;
                 }
                 
                 // We also want to look at the current state of the editor
@@ -645,6 +646,7 @@ public class SoftKeyboard extends InputMethodService
                 primaryCode = Character.toUpperCase(primaryCode);
             }
         }
+        /*
         if (mPredictionOn) {
             mComposing.append((char) primaryCode);
             getCurrentInputConnection().setComposingText(mComposing, 1);
@@ -654,12 +656,19 @@ public class SoftKeyboard extends InputMethodService
             getCurrentInputConnection().commitText(
                     String.valueOf((char) primaryCode), 1);
         }
+
+         */
+        getCurrentInputConnection().commitText(
+                String.valueOf((char) primaryCode), 1);
     }
 
     private void handleClose() {
+        /*
         commitTyped(getCurrentInputConnection());
         requestHideSelf(0);
         mInputView.closing();
+
+         */
     }
 
     private IBinder getToken() {
@@ -687,21 +696,23 @@ public class SoftKeyboard extends InputMethodService
             mLastShiftTime = now;
         }
     }
-    
+
+
     private String getWordSeparators() {
         return mWordSeparators;
     }
-    
+
     public boolean isWordSeparator(int code) {
         String separators = getWordSeparators();
         return separators.contains(String.valueOf((char)code));
     }
 
     public void pickDefaultCandidate() {
-        pickSuggestionManually(0);
+        // pickSuggestionManually(0);
     }
     
     public void pickSuggestionManually(int index) {
+        /*
         if (mCompletionOn && mCompletions != null && index >= 0
                 && index < mCompletions.length) {
             CompletionInfo ci = mCompletions[index];
@@ -718,22 +729,24 @@ public class SoftKeyboard extends InputMethodService
             commitTyped(getCurrentInputConnection());
 
         }
+
+         */
     }
     
     public void swipeRight() {
         Log.d("SoftKeyboard", "Swipe right");
         if (mCompletionOn || mPredictionOn) {
-            pickDefaultCandidate();
+            //pickDefaultCandidate();
         }
     }
     
     public void swipeLeft() {
         Log.d("SoftKeyboard", "Swipe left");
-        handleBackspace();
+        //handleBackspace();
     }
 
     public void swipeDown() {
-        handleClose();
+        //handleClose();
     }
 
     public void swipeUp() {
@@ -752,6 +765,7 @@ public class SoftKeyboard extends InputMethodService
      */
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
+        /*
         final StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < results.length; ++i) {
@@ -765,8 +779,11 @@ public class SoftKeyboard extends InputMethodService
 
             sb.append(" (" + len + ")");
         }
+
         Log.d("SoftKeyboard", "SUGGESTIONS: " + sb.toString());
+         */
     }
+    /*
     private static final int NOT_A_LENGTH = -1;
 
     private void dumpSuggestionsInfoInternal(
@@ -777,9 +794,11 @@ public class SoftKeyboard extends InputMethodService
             sb.add(si.getSuggestionAt(j));
         }
     }
+     */
 
     @Override
     public void onGetSentenceSuggestions(SentenceSuggestionsInfo[] results) {
+        /*
         Log.d("SoftKeyboard", "onGetSentenceSuggestions");
         final List<String> sb = new ArrayList<>();
         for (int i = 0; i < results.length; ++i) {
@@ -791,5 +810,6 @@ public class SoftKeyboard extends InputMethodService
         }
         Log.d("SoftKeyboard", "SUGGESTIONS: " + sb.toString());
         setSuggestions(sb, true, true);
+        */
     }
 }
