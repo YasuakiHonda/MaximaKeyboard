@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008-2009 The Android Open Source Project
+ * Copyright (C) 2019 Yasuaki Honda
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +23,7 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.IBinder;
+import android.os.Parcelable;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
 import android.util.Log;
@@ -39,6 +41,10 @@ import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
 import android.view.textservice.TextServicesManager;
+import android.net.Uri;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -373,7 +379,6 @@ public class SoftKeyboard extends InputMethodService
      * continue to the app.
      */
     @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
                 // The InputMethodService already takes care of the back
@@ -526,7 +531,10 @@ public class SoftKeyboard extends InputMethodService
 
     public void onKey(int primaryCode, int[] keyCodes) {
         Log.d("Test","KEYCODE: " + primaryCode);
-        if (isWordSeparator(primaryCode)) {
+
+        if (primaryCode==-6) {
+            showCopyright();
+        } else if (isWordSeparator(primaryCode)) {
             // Handle separator
             if (mComposing.length() > 0) {
                 commitTyped(getCurrentInputConnection());
@@ -557,6 +565,12 @@ public class SoftKeyboard extends InputMethodService
         } else {
             handleCharacter(primaryCode, keyCodes);
         }
+    }
+
+    private void showCopyright() {
+        Intent intent = new Intent( Intent.ACTION_VIEW );
+        intent.setData( Uri.parse("https://www.apple.com/") );
+        startActivity( intent );
     }
 
     public void onText(CharSequence text) {

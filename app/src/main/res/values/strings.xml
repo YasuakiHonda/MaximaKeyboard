@@ -34,8 +34,36 @@
     <string name="label_subtype_en_GB">English (GB)</string>
 
     <!-- Titles for ImePreference -->
-    <string name="settings_name">Maxima Keyboard Settings</string>
+    <string name="settings_name">About Maxima Keyboard</string>
     <string name="language_selection_title">Input languages</string>
     <string name="select_language">Select input languages</string>
     <string name="general_category">General</string>
+    <string name="about_maxima_keyboard">Copyright 2019 Yasuaki Honda \n \nLicense
+        \nThis software is licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+\n
+\n        http://www.apache.org/licenses/LICENSE-2.0
+\n\nUnless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. \n\n
+
+        \nAcknowledgements\n
+        Part of the layout of the symbol keyboard in Maxima Keyboard is a modified copy of
+        Std Math Keyboard, created by Leonel Hernández. The original Std Math Keyboard can
+        be obtained from Google Play.\n\n
+        With my request, Leonel san has kindly allowed me to use the layout with any
+        modifications.\n\n
+        The layout is extremely superior as the symbol keyboard not only have frequently used
+        symbols, but also frequently used alphabets in math, such as x,y,z, and a,b,c.
+        This makes the switching between querty and symbol keyboad significantly less.\n\n
+        My modification is to add few Maxima symbols in this layout.\n\n
+        I express my great thanks to Leonel san.\n\n
+        Most of this software is based on the sample source code\n\n
+        https://android.googlesource.com/platform/development/+/master/samples/SoftKeyboard/src/com/example/android/softkeyboard\n\n
+        which is licensed under Apache 2.0 license.\n\n
+        I express thanks to the authors of this sample source code.
+</string>
 </resources>
