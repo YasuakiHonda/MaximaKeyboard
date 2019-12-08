@@ -532,9 +532,7 @@ public class SoftKeyboard extends InputMethodService
     public void onKey(int primaryCode, int[] keyCodes) {
         Log.d("Test","KEYCODE: " + primaryCode);
 
-        if (primaryCode==-6) {
-            showCopyright();
-        } else if (isWordSeparator(primaryCode)) {
+        if (isWordSeparator(primaryCode)) {
             // Handle separator
             if (mComposing.length() > 0) {
                 commitTyped(getCurrentInputConnection());
@@ -565,12 +563,6 @@ public class SoftKeyboard extends InputMethodService
         } else {
             handleCharacter(primaryCode, keyCodes);
         }
-    }
-
-    private void showCopyright() {
-        Intent intent = new Intent( Intent.ACTION_VIEW );
-        intent.setData( Uri.parse("https://www.apple.com/") );
-        startActivity( intent );
     }
 
     public void onText(CharSequence text) {
