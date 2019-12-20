@@ -25,6 +25,7 @@ import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.inputmethod.InputMethodSubtype;
 
 import java.util.List;
@@ -73,6 +74,8 @@ public class LatinKeyboardView extends KeyboardView {
         paint.setColor(Color.LTGRAY);
 
         List<Key> keys = getKeyboard().getKeys();
+        if (!keys.get(0).label.equals("q")) return;
+
         for(Key key: keys) {
             if(key.label != null) {
                 if (key.label.equals("q")) {
@@ -85,6 +88,16 @@ public class LatinKeyboardView extends KeyboardView {
                     canvas.drawText("4", key.x + (key.width - 25), key.y + 40, paint);
                 } else if (key.label.equals("t")) {
                     canvas.drawText("5", key.x + (key.width - 25), key.y + 40, paint);
+                } else if (key.label.equals("y")) {
+                    canvas.drawText("6", key.x + (key.width - 25), key.y + 40, paint);
+                } else if (key.label.equals("u")) {
+                    canvas.drawText("7", key.x + (key.width - 25), key.y + 40, paint);
+                } else if (key.label.equals("i")) {
+                    canvas.drawText("8", key.x + (key.width - 25), key.y + 40, paint);
+                } else if (key.label.equals("o")) {
+                    canvas.drawText("9", key.x + (key.width - 25), key.y + 40, paint);
+                } else if (key.label.equals("p")) {
+                    canvas.drawText("0", key.x + (key.width - 25), key.y + 40, paint);
                 }
             }
 
